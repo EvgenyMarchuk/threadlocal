@@ -4,13 +4,13 @@ import org.testng.annotations.*;
 
 public class TestBase {
 
-    protected static ThreadLocal<WebDriver> thlDriver = new ThreadLocal<WebDriver>();
+    private static ThreadLocal<WebDriver> thlDriver = new ThreadLocal<>();
 
-    public static void setThlDriver(WebDriver driver) {
+    private static void setThlDriver(WebDriver driver) {
         thlDriver.set(driver);
     }
 
-    public static WebDriver getThlDriver(){
+    static WebDriver getThlDriver(){
         return thlDriver.get();
     }
 
